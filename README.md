@@ -3,7 +3,8 @@
 ## Installation
 
 ```shell
-uv pip install -r pyproject.toml --all-extras
+uv venv
+uv sync --all-groups
 ```
 
 Replace `myproject` with the name of your project.
