@@ -9,9 +9,11 @@
 3. Create a new virtual environment and install the dependencies.
 
    ```shell
-   uv venv
-   uv sync --all-groups
+   uv sync
    ```
+
+   `uv sync` creates a virtual environment(`.venv`) if the project virtual environment
+   does not exists.
 
 4. Install [pre-commit](https://pre-commit.com/) hooks.
 
@@ -25,6 +27,10 @@
    git config commit.template .gitmessage
    ```
 
-6. Replace `myproject` with the name of your project.
+6. Replace the project information with your own.
+
+    - Change the directory name `myproject` under `src`.
+
+    - Update the project name `myproject` and authors in pyproject.toml.
 
 7. Update the `README.md` file with your project information.
