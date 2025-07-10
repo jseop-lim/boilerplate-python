@@ -1,6 +1,6 @@
 .PHONY: type-check
-mypy:												## Run mypy
-	@echo "=> Running mypy"
+type-check:											## Run mypy
+@echo "=> Running mypy"
 	@uv run mypy .
 	@echo "=> mypy complete"
 
