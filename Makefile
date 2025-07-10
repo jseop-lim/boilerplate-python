@@ -1,6 +1,10 @@
+.PHONY: install
+install:  											## Install dependencies
+	@uv sync
+
 .PHONY: type-check
-type-check:											## Run mypy
-@echo "=> Running mypy"
+type-check:											## Run type checkers
+	@echo "=> Running mypy"
 	@uv run mypy .
 	@echo "=> mypy complete"
 
