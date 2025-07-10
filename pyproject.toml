@@ -40,3 +40,6 @@ target-version = "py312"
 
 [tool.ruff.lint]
 extend-select = ["I"]
+
+[tool.uv]
+default-groups = ["dev", "lint"]
