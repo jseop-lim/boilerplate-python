@@ -1,0 +1,42 @@
+name: Update pre-commit hooks
+
+on:
+  schedule:
+    - cron: "0 16 * * 0" # Every Monday at 16:00 UTC (09:00 KST)
+  workflow_dispatch:
+
+permissions:
+  contents: write # permission to push changes
+  pull-requests: write # permission to create pull requests
+
+env:
+  GITHUB_USER: "pre-commit-ci[bot] <pre-commit-ci[bot]@users.noreply.github.com>"
+  BRANCH: "pre-commit-ci-update-config"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      - name: Update hooks
+        run: pre-commit autoupdate
+
+      - name: Commit and create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: Update pre-commit hooks"
+          committer: "${{ env.GITHUB_USER }}"
+          author: "${{ env.GITHUB_USER }}"
+          branch: ${{ env.BRANCH }}
+          delete-branch: true
+          title: "[pre-commit.ci] pre-commit autoupdate"
+          body: "Updated pre-commit hooks to the latest versions.\n\nThis PR was created by GitHub Actions."
