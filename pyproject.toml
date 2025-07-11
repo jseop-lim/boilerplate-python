@@ -30,10 +30,12 @@ lint = [
 
 [tool.mypy]
 python_version = "3.12"
-strict = true
-ignore_missing_imports = true
+packages = ["src", "tests"]
 # Enable to use numpy typing
 # plugins = ["numpy.typing.mypy_plugin"]
+
+strict = true
+ignore_missing_imports = true
 
 [tool.ruff]
 line-length = 88
