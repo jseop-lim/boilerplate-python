@@ -36,6 +36,8 @@
 
     - Update the project name `myproject` and authors in pyproject.toml.
 
+    - Update the `name` field in `.devcontainer/devcontainer.json`.
+
 7. Update the `README.md` file with your project information.
 
 ## Usage

@@ -1,5 +1,7 @@
 .PHONY: install
 install:  											## Install dependencies
+	@echo "=> Installing python"
+	@uv python install
 	@echo "=> Installing dependencies"
 	@uv sync
 	@echo "=> Installing pre-commit hooks"
