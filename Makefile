@@ -10,6 +10,10 @@ install:  											## Install dependencies
 	@git config commit.template .gitmessage
 	@echo "=> Dependencies installed"
 
+.PHONY: destroy
+destroy: 											## Destroy the virtual environment
+	@rm -rf .venv
+
 .PHONY: upgrade
 upgrade:       										## Upgrade all dependencies to the latest stable versions
 	@echo "=> Updating all dependencies"
