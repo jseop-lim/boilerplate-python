@@ -39,7 +39,7 @@ jobs:
           python-version-file: ".python-version"
 
       - name: Run mypy
-        run: uv run mypy
+        run: uv run mypy --pretty
 
   test:
     name: Run tests with ${{ matrix.python-version }}
