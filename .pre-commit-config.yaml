@@ -11,7 +11,7 @@ repos:
     args: ["--pytest-test-first"]
   - id: trailing-whitespace
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.11.7
+  rev: v0.12.3
   hooks:
     - id: ruff
     - id: ruff
@@ -19,7 +19,7 @@ repos:
       args: ["--select", "I", "--fix"]
     - id: ruff-format
 - repo: https://github.com/DavidAnson/markdownlint-cli2
-  rev: v0.17.2
+  rev: v0.18.1
   hooks:
     - id: markdownlint-cli2
       args: ["--fix"]
