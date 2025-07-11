@@ -6,6 +6,9 @@
 
 2. Install [uv](https://docs.astral.sh/uv/) if you haven't already.
 
+   > If you are in the state of installing make, you can replace steps 3-5 with
+   `make install`.
+
 3. Create a new virtual environment and install the dependencies.
 
    ```shell
@@ -34,3 +37,7 @@
     - Update the project name `myproject` and authors in pyproject.toml.
 
 7. Update the `README.md` file with your project information.
+
+## Usage
+
+Refer to the commands in the [Makefile](./Makefile) for tasks.
