@@ -72,7 +72,7 @@
 1. Customize the project information using the interactive setup script.
 
    ```shell
-   chmod +x scripts/rename_project.sh
+   chmod +x scripts/rename_project.sh && \
    ./scripts/rename_project.sh
    ```
 
