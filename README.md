@@ -1,5 +1,22 @@
 # Boilerplate for Python Package
 
+<!-- Core Technologies -->
+[![Python](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/jseop-lim/boilerplate-python/blob/main/LICENSE)
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json&label=managed%20by&labelColor=grey&color=blue)](https://github.com/astral-sh/uv)
+
+<!-- Code Quality -->
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![MyPy](https://img.shields.io/badge/mypy-checked-blue.svg)](http://mypy-lang.org/)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+
+<!-- Development Environment -->
+[![Dev Container](https://img.shields.io/badge/dev%20container-supported-blue?logo=visualstudiocode)](https://code.visualstudio.com/docs/devcontainers/containers)
+[![Make](https://img.shields.io/badge/automation-make-blue.svg)](https://www.gnu.org/software/make/)
+
+<!-- CI/CD Status -->
+[![CI](https://github.com/jseop-lim/boilerplate-python/actions/workflows/ci.yml/badge.svg)](https://github.com/jseop-lim/boilerplate-python/actions/workflows/ci.yml)
+
 ## Installation
 
 ### Option 1: Local Development
