@@ -1,6 +1,32 @@
 .PHONY: install
 install:  											## Install dependencies
+	@echo "=> Installing dependencies"
 	@uv sync
+	@echo "=> Installing pre-commit hooks"
+	@uv run pre-commit install
+	@echo "=> Setting up git commit template"
+	@git config commit.template .gitmessage
+	@echo "=> Dependencies installed"
+
+.PHONY: upgrade
+upgrade:       										## Upgrade all dependencies to the latest stable versions
+	@echo "=> Updating all dependencies"
+	@uv lock --upgrade
+	@echo "=> Dependencies Updated"
+	@uv run pre-commit autoupdate
+	@echo "=> Updated Pre-commit"
+
+.PHONY: lock
+lock: 												## Lock dependencies
+	@echo "=> Locking dependencies"
+	@uv lock
+	@echo "=> Dependencies locked"
+
+.PHONY: export
+export: 										   ## Export the lock file to requirements.txt
+	@echo "=> Exporting lock file to requirements.txt"
+	@uv export --format requirements-txt -o requirements.txt
+	@echo "=> Exported lock file to requirements.txt"
 
 .PHONY: type-check
 type-check:											## Run type checkers
