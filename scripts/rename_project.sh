@@ -1,12 +1,47 @@
 #!/bin/bash
 
-old="$1"
-new="$2"
+# Interactive project setup script
+echo "=== Project Setup ==="
+echo ""
 
-if [ -z "$old" ] || [ -z "$new" ]; then
-  echo "Usage: $0 <old_name> <new_name>"
+# Get project name
+read -p "Enter project name: " project_name
+if [ -z "$project_name" ]; then
+  echo "Error: Project name cannot be empty"
   exit 1
 fi
+
+# Get author name
+read -p "Enter author name: " author_name
+if [ -z "$author_name" ]; then
+  echo "Error: Author name cannot be empty"
+  exit 1
+fi
+
+# Get author email
+read -p "Enter author email: " author_email
+if [ -z "$author_email" ]; then
+  echo "Error: Author email cannot be empty"
+  exit 1
+fi
+
+echo ""
+echo "=== Configuration ==="
+echo "Project name: $project_name"
+echo "Author name: $author_name"
+echo "Author email: $author_email"
+echo ""
+
+# Confirm before proceeding
+read -p "Proceed with setup? (y/N): " confirm
+if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+  echo "Setup cancelled"
+  exit 0
+fi
+
+echo ""
+old="myproject"
+new="$project_name"
 
 # 1. Rename directory: src/<old> -> src/<new>
 echo "=> Renaming directory..."
@@ -29,6 +64,18 @@ for file in "${files_to_update[@]}"; do
     echo "   ⚠ Warning: File $file not found"
   fi
 done
+
+# 2.1. Update author information in pyproject.toml
+echo "=> Updating author information..."
+if [ -f "pyproject.toml" ]; then
+  # Update author name
+  sed -i '' "s/{ name = \"[^\"]*\"/{ name = \"$author_name\"/g" pyproject.toml
+  # Update author email
+  sed -i '' "s/email = \"[^\"]*\" }/email = \"$author_email\" }/g" pyproject.toml
+  echo "   ✓ Updated author information in pyproject.toml"
+else
+  echo "   ⚠ Warning: pyproject.toml not found"
+fi
 
 # 3. Generate new lock file with updated configuration
 echo "=> Generating new lock file..."
