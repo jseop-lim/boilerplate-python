@@ -1,25 +1,25 @@
 repos:
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v5.0.0
-  hooks:
-  - id: check-json
-  - id: check-merge-conflict
-  - id: check-toml
-  - id: check-yaml
-  - id: end-of-file-fixer
-  - id: name-tests-test
-    args: ["--pytest-test-first"]
-  - id: trailing-whitespace
-- repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.12.5
-  hooks:
-    - id: ruff
-    - id: ruff
-      name: isort
-      args: ["--select", "I", "--fix"]
-    - id: ruff-format
-- repo: https://github.com/DavidAnson/markdownlint-cli2
-  rev: v0.18.1
-  hooks:
-    - id: markdownlint-cli2
-      args: ["--fix"]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: name-tests-test
+        args: ["--pytest-test-first"]
+      - id: trailing-whitespace
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.5
+    hooks:
+      - id: ruff
+      - id: ruff
+        name: isort
+        args: ["--select", "I", "--fix"]
+      - id: ruff-format
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.18.1
+    hooks:
+      - id: markdownlint-cli2
+        args: ["--fix"]
