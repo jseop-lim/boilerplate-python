@@ -2,7 +2,6 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
-      - id: check-json
       - id: check-merge-conflict
       - id: check-toml
       - id: check-yaml
@@ -10,6 +9,10 @@ repos:
       - id: name-tests-test
         args: ["--pytest-test-first"]
       - id: trailing-whitespace
+  - repo: https://gitlab.com/bmares/check-json5
+    rev: v1.0.0
+    hooks:
+      - id: check-json5
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.12.5
     hooks:
