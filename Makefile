@@ -5,7 +5,7 @@ install:  											## Install dependencies
 	@echo "=> Installing dependencies"
 	@uv sync
 	@echo "=> Installing pre-commit hooks"
-	@uv run pre-commit install
+	@uv run pre-commit install --install-hooks
 	@echo "=> Setting up git commit template"
 	@git config commit.template .gitmessage
 	@echo "=> Dependencies installed"
