@@ -41,7 +41,7 @@ fi
 
 echo ""
 old="myproject"
-new="$project_name"
+new="${project_name//-/_}"
 
 # 1. Rename directory: src/<old> -> src/<new>
 echo "=> Renaming directory..."
