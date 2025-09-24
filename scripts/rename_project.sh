@@ -28,7 +28,7 @@ fi
 echo ""
 echo "---- Configuration ----"
 echo "Project name: $project_name"
-echo "Author name:  $author_name"
+echo "Author name : $author_name"
 echo "Author email: $author_email"
 echo ""
 
