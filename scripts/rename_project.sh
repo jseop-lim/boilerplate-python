@@ -20,8 +20,8 @@ fi
 
 # Get author email
 read -p "Author email: " author_email
-if [ -z "$author_email" ]; then
-  echo "Error: Author email cannot be empty"
+if [ -z "$author_email" ] || [[ ! "$author_email" == *"@"*"."* ]]; then
+  echo "Error: Invalid email format"
   exit 1
 fi
 
@@ -94,8 +94,21 @@ fi
 
 # 5. Generate new lock file with updated configuration
 echo "=> Generating new lock file..."
-uv lock
-echo "   ✓ Lock file regenerated"
+if uv lock; then
+  echo "   ✓ Lock file regenerated"
+else
+  echo "   ✗ Failed to regenerate lock file"
+  exit 1
+fi
+
+# 6. Sync dependencies with updated configuration
+echo "=> Syncing dependencies..."
+if uv sync; then
+  echo "   ✓ Dependencies synchronized"
+else
+  echo "   ✗ Failed to sync dependencies"
+  exit 1
+fi
 
 echo ""
 echo "Setup complete! Project '$project_name' is ready."
