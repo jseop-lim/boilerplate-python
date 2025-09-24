@@ -82,7 +82,7 @@
    - Author email
 
    The script automatically:
-   - Renames the `src/myproject` directory
+   - Renames the `src/my_project` directory
    - Updates project name and author info in `pyproject.toml`
    - Updates the container name in `.devcontainer/devcontainer.json`
    - Regenerates the lock file
