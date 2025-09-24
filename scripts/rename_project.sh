@@ -20,7 +20,7 @@ fi
 
 # Get author email
 read -p "Author email: " author_email
-if [ -z "$author_email" ] || [[ ! "$author_email" == *"@"*"."* ]]; then
+if [ -z "$author_email" ] || [[ ! "$author_email" =~ ^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$ ]]; then
   echo "Error: Invalid email format"
   exit 1
 fi
