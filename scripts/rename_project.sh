@@ -40,8 +40,8 @@ if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
 fi
 
 echo ""
-old_project_name="my-project"
-old_module_name="my_project"
+old_project_name=$(uv version | cut -d' ' -f1)
+old_module_name="${old_project_name//-/_}"
 new_project_name="$project_name"
 new_module_name="${project_name//-/_}"
 
