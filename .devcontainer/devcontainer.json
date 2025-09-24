@@ -1,5 +1,5 @@
 {
-	"name": "myproject",
+	"name": "my-project",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"context": "."
