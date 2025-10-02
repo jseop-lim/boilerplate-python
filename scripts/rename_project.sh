@@ -11,6 +11,9 @@ if [ -z "$project_name" ]; then
   exit 1
 fi
 
+# Normalize project name: replace spaces/underscores with hyphens, collapse multiple hyphens
+project_name=$(echo "$project_name" | tr -s '_ ' '-')
+
 # Get author name
 read -p "Author name : " author_name
 if [ -z "$author_name" ]; then
