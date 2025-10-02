@@ -17,7 +17,23 @@
 <!-- CI/CD Status -->
 [![CI](https://github.com/jseop-lim/boilerplate-python/actions/workflows/ci.yml/badge.svg)](https://github.com/jseop-lim/boilerplate-python/actions/workflows/ci.yml)
 
-## Installation
+<!-- markdownlint-disable MD033 -->
+<details>
+<summary>Table of Contents</summary>
+
+- [Getting started](#getting-started)
+  - [Option 1: Local Development](#option-1-local-development)
+  - [Option 2: Dev Container Development](#option-2-dev-container-development)
+  - [Next Steps (for both options)](#next-steps-for-both-options)
+- [Usage](#usage)
+  - [Running the Application](#running-the-application)
+  - [Development Commands](#development-commands)
+- [Acknowledgments](#acknowledgments)
+
+</details>
+<!-- markdownlint-enable MD033 -->
+
+## Getting started
 
 ### Option 1: Local Development
 
@@ -114,3 +130,10 @@ For more details on project scripts and entry points, refer to [PEP 621](https:/
 ### Development Commands
 
 Refer to the commands in the [`Makefile`](./Makefile) for development tasks.
+
+## Acknowledgments
+
+This boilerplate was inspired by:
+
+- [8percent/python-library](https://github.com/8percent/python-library)
+- [litestar-org/litestar](https://github.com/litestar-org/litestar)
