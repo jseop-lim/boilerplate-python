@@ -91,4 +91,26 @@
 
 ## Usage
 
-Refer to the commands in the [Makefile](./Makefile) for tasks.
+### Running the Application
+
+You can run the `main()` function defined in
+[`__init__.py`](./src/my_project/__init__.py) using:
+
+```shell
+uv run my-project
+```
+
+The entry point is defined in [`pyproject.toml`](./pyproject.toml) under
+`[project.scripts]`. You can customize it by modifying the script configuration:
+
+```toml
+[project.scripts]
+my-project = "my_project:main"
+your-custom-command = "my_project:your_function"
+```
+
+For more details on project scripts and entry points, refer to [PEP 621](https://peps.python.org/pep-0621/#entry-points).
+
+### Development Commands
+
+Refer to the commands in the [`Makefile`](./Makefile) for development tasks.
