@@ -25,17 +25,19 @@ dev = [
 lint = [
     "mypy>=1.15.0",
     "pre-commit>=4.2.0",
+    "pyright>=1.1.407",
     "ruff>=0.11.7",
 ]
 
 [tool.mypy]
 python_version = "3.12"
 packages = ["src", "tests"]
-# Enable to use numpy typing
-# plugins = ["numpy.typing.mypy_plugin"]
 
 strict = true
 ignore_missing_imports = true
+
+[tool.pyright]
+include = ["src", "tests"]
 
 [tool.ruff]
 line-length = 88
