@@ -38,7 +38,9 @@ export: 										   ## Export the lock file to requirements.txt
 type-check:											## Run type checkers
 	@echo "=> Running mypy"
 	@uv run mypy
-	@echo "=> mypy complete"
+	@echo "=> Running pyright"
+	@uv run pyright
+	@echo "=> Type checking complete"
 
 .PHONY: pre-commit
 pre-commit: 										## Runs pre-commit hooks

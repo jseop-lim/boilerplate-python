@@ -42,6 +42,9 @@ jobs:
       - name: Run mypy
         run: uv run mypy --pretty
 
+      - name: Run pyright
+        run: uv run pyright
+
   test:
     name: Run tests with ${{ matrix.python-version }}
     runs-on: ubuntu-latest
