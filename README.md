@@ -152,10 +152,7 @@ chmod +x scripts/change_python_version.sh && \
 This will prompt you for the new Python version (e.g., 3.13.1) and automatically:
 
 - Update `.python-version` file
-- Update Python version settings in `pyproject.toml`:
-  - `requires-python`
-  - `tool.mypy.python_version`
-  - `tool.ruff.target-version`
+- Update Python version settings in `pyproject.toml`
 - Update Python version in `.github/workflows/ci.yml`
 - Remove and recreate the virtual environment
 - Install the specified Python version (if not already available)
