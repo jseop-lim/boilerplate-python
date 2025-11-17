@@ -27,6 +27,7 @@
   - [Next Steps (for both options)](#next-steps-for-both-options)
 - [Usage](#usage)
   - [Running the Application](#running-the-application)
+  - [Changing Python Version](#changing-python-version)
   - [Development Commands](#development-commands)
 - [Acknowledgments](#acknowledgments)
 
@@ -138,6 +139,27 @@ your-custom-command = "my_project:your_function"
 ```
 
 For more details on project scripts and entry points, refer to [PEP 621](https://peps.python.org/pep-0621/#entry-points).
+
+### Changing Python Version
+
+You can change the Python version used in the project using the interactive script:
+
+```shell
+chmod +x scripts/change_python_version.sh && \
+./scripts/change_python_version.sh
+```
+
+This will prompt you for the new Python version (e.g., 3.13.1) and automatically:
+
+- Update `.python-version` file
+- Update Python version settings in `pyproject.toml`:
+  - `requires-python`
+  - `tool.mypy.python_version`
+  - `tool.ruff.target-version`
+- Update Python version in `.github/workflows/ci.yml`
+- Remove and recreate the virtual environment
+- Install the specified Python version (if not already available)
+- Sync dependencies with the new Python version
 
 ### Development Commands
 
