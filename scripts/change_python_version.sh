@@ -75,14 +75,10 @@ fi
 # 4. Check if Python version exists in shell, otherwise install with uv
 echo "=> Checking Python $new_version..."
 should_install=true
-if command -v python &> /dev/null; then
-  shell_version=$(python --version 2>&1 | cut -d' ' -f2)
-  if [ "$shell_version" = "$new_version" ]; then
-    echo "   ✓ Python $new_version found in shell"
-    should_install=false
-  fi
+if uv python list | grep -q "$new_version"; then
+  echo "   ✓ Python $new_version available to uv"
+  should_install=false
 fi
-
 if [ "$should_install" = true ]; then
   echo "   Installing Python $new_version with uv..."
   if uv python install "$new_version"; then
