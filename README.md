@@ -105,6 +105,18 @@
 
 2. Update the `README.md` file with your project information.
 
+3. (Optional) If you want to manage dependency versions manually instead of
+   using automated version upgrades:
+
+   ```shell
+   chmod +x scripts/remove_dependabot.sh && \
+   ./scripts/remove_dependabot.sh
+   ```
+
+   This will remove:
+   - `.github/dependabot.yml` configuration file
+   - `.github/workflows/update-pre-commit.yml` workflow file
+
 ## Usage
 
 ### Running the Application
