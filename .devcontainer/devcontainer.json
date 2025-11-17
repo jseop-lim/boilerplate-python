@@ -21,6 +21,8 @@
 			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions.git https://github.com/zsh-users/zsh-syntax-highlighting.git"
 		}
 	},
+	// Exceptionally configured due to locally installed delta.
+	"postStartCommand": "git config --global --unset core.pager || true",
 	"postCreateCommand": "make destroy && make install",
 	"customizations": {
 		"vscode": {
@@ -31,8 +33,7 @@
 				"gitHub.copilot",
 				"leojhonsong.python-extension-pack",
 				"redhat.vscode-yaml",
-				"tamasfe.even-better-toml",
-				"yzhang.markdown-all-in-one"
+				"tamasfe.even-better-toml"
 			]
 		}
 	}
