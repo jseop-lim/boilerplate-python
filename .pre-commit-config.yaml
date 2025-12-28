@@ -10,11 +10,11 @@ repos:
         args: ["--pytest-test-first"]
       - id: trailing-whitespace
   - repo: https://gitlab.com/bmares/check-json5
-    rev: v1.0.0
+    rev: v1.0.1
     hooks:
       - id: check-json5
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.5
+    rev: v0.14.10
     hooks:
       - id: ruff-check
         args: ["--fix"]
@@ -23,6 +23,6 @@ repos:
         name: isort
         args: ["--select", "I", "--fix"]
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.45.0
+    rev: v0.47.0
     hooks:
       - id: markdownlint-fix
