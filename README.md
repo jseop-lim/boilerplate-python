@@ -1,20 +1,24 @@
 # Boilerplate for Python Package
 
 <!-- Core Technologies -->
+
 [![Python](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/jseop-lim/boilerplate-python/blob/main/LICENSE)
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json&label=managed%20by&labelColor=grey&color=blue)](https://github.com/astral-sh/uv)
 
 <!-- Code Quality -->
+
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![MyPy](https://img.shields.io/badge/mypy-checked-blue.svg)](http://mypy-lang.org/)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 
 <!-- Development Environment -->
+
 [![Dev Container](https://img.shields.io/badge/dev%20container-supported-blue?logo=visualstudiocode)](https://code.visualstudio.com/docs/devcontainers/containers)
 [![Make](https://img.shields.io/badge/automation-make-blue.svg)](https://www.gnu.org/software/make/)
 
 <!-- CI/CD Status -->
+
 [![CI](https://github.com/jseop-lim/boilerplate-python/actions/workflows/ci.yml/badge.svg)](https://github.com/jseop-lim/boilerplate-python/actions/workflows/ci.yml)
 
 <!-- markdownlint-disable MD033 -->
@@ -50,8 +54,8 @@
    uv sync
    ```
 
-   `uv sync` creates a virtual environment(`.venv`) if the project virtual environment
-   does not exists.
+   `uv sync` creates a virtual environment(`.venv`) if the project virtual
+   environment does not exists.
 
 4. Install [pre-commit](https://pre-commit.com/) hooks.
 
@@ -75,8 +79,8 @@
    installed.
 
 3. Open the project in VS Code and select "Reopen in Container" when prompted,
-   or use the command palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and run
-   "Dev Containers: Reopen in Container".
+   or use the command palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and run "Dev
+   Containers: Reopen in Container".
 
    The dev container will automatically:
    - Set up the Python environment with uv
@@ -138,18 +142,21 @@ my-project = "my_project:main"
 your-custom-command = "my_project:your_function"
 ```
 
-For more details on project scripts and entry points, refer to [PEP 621](https://peps.python.org/pep-0621/#entry-points).
+For more details on project scripts and entry points, refer to
+[PEP 621](https://peps.python.org/pep-0621/#entry-points).
 
 ### Changing Python Version
 
-You can change the Python version used in the project using the interactive script:
+You can change the Python version used in the project using the interactive
+script:
 
 ```shell
 chmod +x scripts/change_python_version.sh && \
 ./scripts/change_python_version.sh
 ```
 
-This will prompt you for the new Python version (e.g., 3.13.1) and automatically:
+This will prompt you for the new Python version (e.g., 3.13.1) and
+automatically:
 
 - Update `.python-version` file
 - Update Python version settings in `pyproject.toml`
