@@ -30,7 +30,7 @@
 				"charliermarsh.ruff",
 				"davidanson.vscode-markdownlint",
 				"eamodio.gitlens",
-				"gitHub.copilot",
+				"github.copilot-chat",
 				"leojhonsong.python-extension-pack",
 				"redhat.vscode-yaml",
 				"tamasfe.even-better-toml"
