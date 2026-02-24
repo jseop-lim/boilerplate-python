@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Cross-platform sed in-place edit: BSD (macOS) requires '' after -i, GNU (Linux) does not
+if sed --version 2>/dev/null | grep -q GNU; then
+  SED_INPLACE=(sed -i)
+else
+  SED_INPLACE=(sed -i '')
+fi
+
 # Interactive project setup script
 echo "==== Project Setup ===="
 echo ""
@@ -63,7 +70,7 @@ files_to_update=("pyproject.toml" ".devcontainer/devcontainer.json")
 
 for file in "${files_to_update[@]}"; do
   if [ -f "$file" ]; then
-    sed -i '' "s/$old_project_name/$new_project_name/g" "$file"
+    "${SED_INPLACE[@]}" "s/$old_project_name/$new_project_name/g" "$file"
     echo "   ✓ Updated project name in: $file"
   else
     echo "   ! Warning: File $file not found"
@@ -76,7 +83,7 @@ files_to_update=("pyproject.toml")
 
 for file in "${files_to_update[@]}"; do
   if [ -f "$file" ]; then
-    sed -i '' "s/$old_module_name/$new_module_name/g" "$file"
+    "${SED_INPLACE[@]}" "s/$old_module_name/$new_module_name/g" "$file"
     echo "   ✓ Updated module name in: $file"
   else
     echo "   ! Warning: File $file not found"
@@ -87,9 +94,9 @@ done
 echo "=> Updating author information..."
 if [ -f "pyproject.toml" ]; then
   # Update author name
-  sed -i '' "s/{ name = \"[^\"]*\"/{ name = \"$author_name\"/g" pyproject.toml
+  "${SED_INPLACE[@]}" "s/{ name = \"[^\"]*\"/{ name = \"$author_name\"/g" pyproject.toml
   # Update author email
-  sed -i '' "s/email = \"[^\"]*\" }/email = \"$author_email\" }/g" pyproject.toml
+  "${SED_INPLACE[@]}" "s/email = \"[^\"]*\" }/email = \"$author_email\" }/g" pyproject.toml
   echo "   ✓ Updated author information in pyproject.toml"
 else
   echo "   ! Warning: pyproject.toml not found"
